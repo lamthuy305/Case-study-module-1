@@ -52,9 +52,9 @@ class game {
         let img = document.getElementById("image");
         this.context.drawImage(img, 0, 0, 500, 500);
         this.context.font = '20px Arial';
-        this.context.fillText("Score: " + this.score, 5, 20);
-        this.context.fillText("Speed: " + this.showspeed, 400, 20);
-        this.context.fillText('Hight score: ' + localStorage.getItem('highScore') + " by " + localStorage.getItem('name'),150,20)
+        this.context.fillText("Score: " + this.score, 400, 20);
+        this.context.fillText("Speed: " + this.showspeed, 400, 50);
+        this.context.fillText('Hight score: ' + localStorage.getItem('highScore') + " by " + localStorage.getItem('name'),5,20)
         this.snake.draw();
         this.food.draw();
     }

@@ -46,10 +46,10 @@ class snake {
         }
         if (!this.endGame()) {
             this.game.context.font = '100px Arial';
-            this.game.context.fillText("Oẳng", 120, 280);
+            this.game.context.fillText("Gà!!!", 120, 280);
             if (localStorage.getItem('highScore') < this.game.score) {
                 localStorage.setItem('highScore', this.game.score);
-                let name = prompt("Nhập tên");
+                let name = prompt("Bạn đã đạt kỷ lục mới, mời nhập tên");
                 localStorage.setItem('name',name);
             }
 

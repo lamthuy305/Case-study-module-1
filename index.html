@@ -23,6 +23,8 @@
 <script>
     function resetHightScore() {
         window.localStorage.clear()
+        localStorage.setItem('highScore', 0);
+        localStorage.setItem('name','Admin')
         location.reload();
     }
 
