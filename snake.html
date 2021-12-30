@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Snake Simple Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>Snake Simple Game</h2>
+<h3>Case Study</h3>
+<p id="demo"></p>
+<p id="demo2"></p>
+<button onclick="resetHightScore()">Reset Hight Score</button>
+<button onclick="resetGame()">Reset Game</button>
+<button onclick="select1()">Chế độ cổ điển</button>
+<button onclick="select2()">Chế độ speed</button>
+
+<div></div>
+<img id="image" width="2" height="2" src="img/back2.png" alt="">
+</body>
+
+<script>
+    // document.getElementById("demo2").innerHTML = "HighScore: " + localStorage.getItem('highScore') + " by " + localStorage.getItem('name');
+    function resetHightScore() {
+        window.localStorage.clear()
+        location.reload();
+    }
+
+    function resetGame() {
+        location.reload();
+    }
+
+    let selectG = 2;
+
+    function select1() {
+        selectG = 1;
+    }
+
+    function select2() {
+        selectG = 2;
+    }
+</script>
+
+<script src="snake.js"></script>
+<script src="food.js"></script>
+<script src="game.js"></script>
+</html>

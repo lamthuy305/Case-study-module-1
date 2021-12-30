@@ -1,0 +1,11 @@
+body{
+	background-color: #87b7de;
+	text-align: center;
+}
+
+canvas {
+	border: 10px solid white;
+}
+button {
+	width: 125px;
+}
