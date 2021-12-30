@@ -23,7 +23,6 @@ class game {
     loop() {
         this.update();
         this.draw();
-        //toc do chay cua ran
         setTimeout(() => this.loop(), this.speed);
     }
 
@@ -32,11 +31,9 @@ class game {
         if (selectG === 2) {
             if (this.snake.eat(this.food.x, this.food.y)) {
                 if (this.count % 10 === 0 && this.count !== 0) {
-                    this.speed -= 1;
+                    this.speed -= 10;
                     this.showspeed += 1;
                     setTimeout(() => this.loop(), this.speed);
-                    // console.log('score', this.score);
-                    // console.log('speed', this.spedd);
                 }
                 this.food.update();
                 this.count += 1;

@@ -8,6 +8,8 @@ class snake {
         this.dy = 0;
         this.cell = [];
         this.maxCells = 4;
+        this.catchHandle();
+
     }
 
     update() {
@@ -32,7 +34,6 @@ class snake {
         if (this.cell.length > this.maxCells) {
             this.cell.pop();
         }
-        this.catchHandle();
     }
 
     draw() {
@@ -70,10 +71,8 @@ class snake {
                 this.dx = 0;
                 this.dy = this.grid;
             } else if (e.which === 32) {
-                this.game.speed -= 1;
+                this.game.speed -= 10;
                 this.game.showspeed += 1;
-                setTimeout(() => this.game.loop(),this.game.speed);
-                // Xem hộ anh chỗ này
             }
         });
     }
