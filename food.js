@@ -9,7 +9,7 @@ class food{
 
 	update() {
 		this.x = (Math.floor(Math.random()*47) + 2)*this.grid;
-		this.y = (Math.floor(Math.random()*47) + 2)*this.grid;
+		this.y = (Math.floor(Math.random()*45) + 4)*this.grid;
 	}
 
 	draw() {

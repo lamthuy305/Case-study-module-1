@@ -9,7 +9,6 @@ class snake {
         this.cell = [];
         this.maxCells = 4;
         this.catchHandle();
-
     }
 
     update() {
@@ -17,19 +16,6 @@ class snake {
             this.x += this.dx;
             this.y += this.dy;
         }
-
-        if (this.x >= this.game.canvas.width) {
-            this.x = 0;
-        } else if (this.x < 0) {
-            this.x = this.game.canvas.width;
-        }
-
-        if (this.y >= this.game.canvas.height) {
-            this.y = 0;
-        } else if (this.y < 0) {
-            this.y = this.game.canvas.height;
-        }
-
         this.cell.unshift({x: this.x, y: this.y});
         if (this.cell.length > this.maxCells) {
             this.cell.pop();
@@ -45,14 +31,13 @@ class snake {
             this.game.context.fill();
         }
         if (!this.endGame()) {
-            this.game.context.font = '100px Arial';
-            this.game.context.fillText("Gà!!!", 120, 280);
+            this.game.context.font = '70px Arial';
+            this.game.context.fillText("Game Over!!!", 58, 260);
             if (localStorage.getItem('highScore') < this.game.score) {
                 localStorage.setItem('highScore', this.game.score);
                 let name = prompt("Bạn đã đạt kỷ lục mới, mời nhập tên");
-                localStorage.setItem('name',name);
+                localStorage.setItem('name', name);
             }
-
         }
     }
 
@@ -73,7 +58,11 @@ class snake {
             } else if (e.which === 32) {
                 this.game.speed -= 10;
                 this.game.showspeed += 1;
+            } else if (e.which === 65) {
+                this.game.speed += 10;
+                this.game.showspeed -= 1;
             }
+
         });
     }
 
@@ -94,7 +83,7 @@ class snake {
         for (let i = 1; i < this.cell.length; i++) {
             if (this.x === this.cell[i].x && this.y === this.cell[i].y) {
                 return false;
-            } else if (this.x === 0 || this.y === 0) {
+            } else if (this.x === 0 || this.y === 0 || this.x === this.game.canvas.width || this.y === this.game.canvas.height) {
                 return false;
             }
         }

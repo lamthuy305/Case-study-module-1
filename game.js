@@ -28,18 +28,17 @@ class game {
 
     update() {
         this.snake.update();
-        if (selectG === 2) {
+        if (selectGame === 2) {
             if (this.snake.eat(this.food.x, this.food.y)) {
-                if (this.count % 10 === 0 && this.count !== 0) {
+                if (this.count % 5 === 0 && this.count !== 0) {
                     this.speed -= 10;
                     this.showspeed += 1;
-                    setTimeout(() => this.loop(), this.speed);
                 }
                 this.food.update();
                 this.count += 1;
                 this.score += this.showspeed;
             }
-        } else if (selectG === 1) {
+        } else if (selectGame === 1) {
             if (this.snake.eat(this.food.x, this.food.y)) {
                 this.food.update();
                 this.score += 1 * this.showspeed;
